@@ -94,7 +94,7 @@ body {
   width: 500px;
   height: 350px;
 }
-.classItems {
+/* .classItems {
   border: 2px solid rgb(231, 25, 231);
   border-radius: 5px;
   outline: none;
@@ -104,7 +104,7 @@ body {
   font-size: 18px;
   padding-right: 20px;
   box-shadow: rgba(238, 128, 223, 0.24) 0px 3px 8px;
-}
+} */
 .text {
   font-size: 18px;
   line-height: 1.2;

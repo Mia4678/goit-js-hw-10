@@ -47,9 +47,9 @@ fetchBreeds()
       select.insertAdjacentHTML('beforeend', options.join(''));
    
     new SlimSelect({
-      select: '#breed-selected',
+      select: select,
       settings: {
-        placeholderText: '',
+        placeholderText: 'Choose cat breed',
       }
     });
 
