@@ -44,12 +44,12 @@ fetchBreeds()
       const options = breeds.map(breed => {
         return `<option value="${breed.id}">${breed.name}</option>`;
       });
-      select.innerHTML = options.join('');
+      select.insertAdjacentHTML('beforeend', options.join(''));
    
     new SlimSelect({
       select: '#breed-selected',
       settings: {
-        placeholderText: 'Choose breed',
+        placeholderText: '',
       }
     });
 
@@ -58,7 +58,6 @@ fetchBreeds()
   })
   .catch(error => {
     clearCatInfo();
-
     hideBreedSelect();
     Notiflix.Notify.failure(
       'Oops! Something went wrong! Try reloading the page!'
@@ -93,7 +92,7 @@ select.addEventListener('change', () => {
         hideLoader();
         showError();
       });
-  }, 1500); // 7 seconds delay (7000 milliseconds)
+  }, 1500); 
 });
 
 
