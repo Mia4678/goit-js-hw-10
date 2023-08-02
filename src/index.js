@@ -9,10 +9,6 @@ const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
 const select = document.querySelector('.breed-select');
 
-const slim = new SlimSelect({
-  select: '#breed-selected',
-});
-
 
 function hideLoader() {
   loader.classList.add('is-hidden');
@@ -45,12 +41,18 @@ showLoader();
 fetchBreeds()
   .then(response => {
     const breeds = response.data;
-    breeds.map(breed => {
       const options = breeds.map(breed => {
         return `<option value="${breed.id}">${breed.name}</option>`;
       });
       select.innerHTML = options.join('');
+   
+    new SlimSelect({
+      select: '#breed-selected',
+      settings: {
+        placeholderText: 'Choose breed',
+      }
     });
+
     hideLoader();
     showBreedSelect();
   })
